@@ -1,15 +1,23 @@
-
+using System;
 
 namespace PierresBakery.Models
 {
     public class Bread
     {
-        public int Loaves {get; set; }
-        
+        public int LoavesOrder {get; set; }
+        public int TotalPrice {get; set; }
 
-        public Bread(int amount)
+        public Bread(int loaves)
         {
-            Loaves = amount;
+            LoavesOrder = loaves;
+            TotalPrice = GetBreadTotalPrice(loaves);
+        }
+
+        public int GetBreadTotalPrice(int loavesOrdered)
+        {
+            int pricePerLoaf = 5;
+            TotalPrice = LoavesOrder * pricePerLoaf;
+            return TotalPrice;
         }
     }
 }

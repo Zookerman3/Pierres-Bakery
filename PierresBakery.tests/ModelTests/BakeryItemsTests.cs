@@ -24,7 +24,7 @@ namespace PierresBakery.Tests
             int loaves = 1;
             Bread newBread = new Bread(loaves);
             //Act
-            int result = newBread.Loaves;
+            int result = newBread.LoavesOrder;
             //Assert
             Assert.AreEqual(loaves, result);
         }
@@ -36,22 +36,26 @@ namespace PierresBakery.Tests
             Bread newBread = new Bread(2);
             int newLoaves = 10;
             //Act
-            newBread.Loaves = newLoaves;
+            newBread.LoavesOrder = newLoaves;
             //Assert
-            Assert.AreEqual(newLoaves, newBread.Loaves);
+            Assert.AreEqual(newLoaves, newBread.LoavesOrder);
         }
-        [TestMethod] // 4
-        public void SetBreadTotal_SetsTotalPriceOfBread_Int()
+        [TestMethod] //4
+        public void GetPrice_ReturnsThePriceOfLoavesOrder_Int()
         {
             //Arrange
-            Bread newBread = newBread(1);
+            int loaves = 1;
+            int PricePerLoaf = 5;
+            Bread newBread = new Bread(loaves);
             //Act
-            int price = newBread.Loaves * 5;
+            int totalPrice = newBread.GetBreadTotalPrice(loaves);
+            Assert.AreEqual(PricePerLoaf, totalPrice);
             //Assert
-            Assert.AreEqual(price, 1);
         }
+        
     }
 }
+
 
 
 //Arrange
