@@ -6,7 +6,7 @@ namespace PierresBakery.Tests
     [TestClass]
     public class BreadTests
     {
-        [TestMethod]
+        [TestMethod] // 1
         public void BreadConstructor_CreatesInstanceofBread_Bread()
         {
             //Arrange
@@ -16,10 +16,10 @@ namespace PierresBakery.Tests
             Assert.AreEqual(typeof(Bread), newBread.GetType());
         }
 
-        [TestMethod]
+        [TestMethod] //2
         public void GetLoaves_ReturnsLoaves_Int()
         {
-            
+
             //Arrange
             int loaves = 1;
             Bread newBread = new Bread(loaves);
@@ -29,7 +29,17 @@ namespace PierresBakery.Tests
             Assert.AreEqual(loaves, result);
         }
 
-
+        [TestMethod] //3
+        public void SetLoaves_SetsValueofLoaves_Void()
+        {
+            //Arrange
+            Bread newBread = new Bread(2);
+            int newLoaves = 10;
+            //Act
+            newBread.Loaves = newLoaves;
+            //Assert
+            AssertAreEqual(newLoaves, newBread.Loaves);
+        }
     }
 }
 
