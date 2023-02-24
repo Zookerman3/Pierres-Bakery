@@ -76,9 +76,21 @@ namespace PierresBakery.Tests
         public void PastryConstructor_CreatesInstanceofPastry_Pastry()
         {
             //Arrange
-            Pastry newPastry = new Pastry();
+            Pastry newPastry = new Pastry(1);
             //Assert
             Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+        }
+        [TestMethod] // 7
+        public void Getpastries_ReturnsLPastries_Int()
+        {
+
+            //Arrange
+            int pastries = 1;
+            Pastry newPastry = new Pastry(pastries);
+            //Act
+            int result = newPastry.PastryOrder;
+            //Assert
+            Assert.AreEqual(pastries, result);
         }
     }
 }
