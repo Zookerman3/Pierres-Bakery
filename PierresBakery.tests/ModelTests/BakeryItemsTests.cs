@@ -69,6 +69,18 @@ namespace PierresBakery.Tests
             Assert.AreEqual(totalPrice1, totalPrice2);
         }
     }
+    [TestClass]
+    public class PastryTests
+    {
+        [TestMethod] // 6
+        public void PastryConstructor_CreatesInstanceofPastry_Pastry()
+        {
+            //Arrange
+            Pastry newPastry = new Pastry();
+            //Assert
+            Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+        }
+    }
 }
 
 
