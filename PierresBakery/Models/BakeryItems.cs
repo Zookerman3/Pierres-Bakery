@@ -2,7 +2,7 @@
 
 namespace PierresBakery.Models
 {
-    public class Brread
+    public class Bread
     {
 
     }

@@ -14,10 +14,20 @@ namespace PierresBakery.Tests
             //Act
             //Assert
             Assert.AreEqual(typeof(Bread), newBread.GetType());
-
-
         }
 
+        [TestMethod]
+        public void GetLoaves_ReturnsLoaves_Int()
+        {
+            
+            //Arrange
+            int loaves = 1;
+            //Act
+            Bread newBread = new Bread(loaves);
+            int result = newBread.Loaves;
+            //Assert
+            Assert.AreEqual(loaves, result);
+        }
 
 
     }
