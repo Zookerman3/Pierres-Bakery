@@ -2,7 +2,7 @@ using System;
 
 namespace PierresBakery.Models
 {
-    public class Passtry
+    public class Pastry
     {
 
     }
