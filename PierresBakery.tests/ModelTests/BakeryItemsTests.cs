@@ -58,9 +58,8 @@ namespace PierresBakery.Tests
 
 
             //Arrange
-            int loaves = 6;
-            int loaves2 = 4;
-            int PricePerLoaf = 5;
+            int loaves = 2;
+            int loaves2 = 3;
             Bread newBread = new Bread(loaves);
             Bread newBread2 = new Bread(loaves2);
             //Act
@@ -68,7 +67,6 @@ namespace PierresBakery.Tests
             int totalPrice2 = newBread2.GetBreadTotalPrice(loaves2);
             //Assert
             Assert.AreEqual(totalPrice1, totalPrice2);
-
         }
     }
 }

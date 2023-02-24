@@ -16,7 +16,9 @@ namespace PierresBakery.Models
         public int GetBreadTotalPrice(int loavesOrdered)
         {
             int pricePerLoaf = 5;
-            TotalPrice = LoavesOrder * pricePerLoaf;
+            int freeLoaves = loavesOrdered / 3;
+            int paidLoaves = loavesOrdered - freeLoaves;
+            TotalPrice = paidLoaves * pricePerLoaf;
             return TotalPrice;
         }
     }
