@@ -38,7 +38,7 @@ namespace PierresBakery.Tests
             //Act
             newBread.Loaves = newLoaves;
             //Assert
-            AssertAreEqual(newLoaves, newBread.Loaves);
+            Assert.AreEqual(newLoaves, newBread.Loaves);
         }
     }
 }
@@ -46,4 +46,4 @@ namespace PierresBakery.Tests
 
 //Arrange
 //Act
-//Assertt
+//Assert

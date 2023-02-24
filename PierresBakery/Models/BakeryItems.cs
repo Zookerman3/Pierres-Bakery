@@ -8,6 +8,7 @@ namespace PierresBakery.Models
         public int Loaves
         {
             get { return _loaves; }
+            set { _loaves = value; }
         }
 
 
