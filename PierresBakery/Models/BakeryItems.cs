@@ -4,17 +4,12 @@ namespace PierresBakery.Models
 {
     public class Bread
     {
-        private int _loaves;
-        public int Loaves
-        {
-            get { return _loaves; }
-            set { _loaves = value; }
-        }
-
+        public int Loaves {get; set; }
+        
 
         public Bread(int amount)
         {
-            _loaves = amount;
+            Loaves = amount;
         }
     }
 }
