@@ -11,7 +11,6 @@ namespace PierresBakery.Tests
         {
             //Arrange
             Bread newBread = new Bread(2);
-            //Act
             //Assert
             Assert.AreEqual(typeof(Bread), newBread.GetType());
         }
@@ -48,7 +47,8 @@ namespace PierresBakery.Tests
             int PricePerLoaf = 5;
             Bread newBread = new Bread(loaves);
             //Act
-            int totalPrice = newBread.GetBreadTotalPrice(loaves);
+            newBread.TotalLoaves += loaves;
+            int totalPrice = newBread.GetBreadTotalPrice();
             Assert.AreEqual(PricePerLoaf, totalPrice);
             //Assert
         }
@@ -61,8 +61,8 @@ namespace PierresBakery.Tests
             Bread newBread = new Bread(loaves);
             Bread newBread2 = new Bread(loaves2);
             //Act
-            int totalPrice1 = newBread.GetBreadTotalPrice(loaves);
-            int totalPrice2 = newBread2.GetBreadTotalPrice(loaves2);
+            int totalPrice1 = newBread.GetBreadTotalPrice();
+            int totalPrice2 = newBread2.GetBreadTotalPrice();
             //Assert
             Assert.AreEqual(totalPrice1, totalPrice2);
         }
@@ -109,7 +109,8 @@ namespace PierresBakery.Tests
             int PricePerPastry = 2;
             Pastry newPastry = new Pastry(pastries);
             //Act
-            int totalPrice = newPastry.GetPastryTotalPrice(pastries);
+            newPastry.TotalPastries += pastries;
+            int totalPrice = newPastry.GetPastryTotalPrice();
             Assert.AreEqual(PricePerPastry, totalPrice);
             //Assert
         }
@@ -122,15 +123,13 @@ namespace PierresBakery.Tests
             Pastry newPastry = new Pastry(pastries);
             Pastry newPastry2 = new Pastry(pastries2);
             //Act
-            int totalPrice1 = newPastry.GetPastryTotalPrice(pastries);
-            int totalPrice2 = newPastry2.GetPastryTotalPrice(pastries2);
+            int totalPrice1 = newPastry.GetPastryTotalPrice();
+            int totalPrice2 = newPastry2.GetPastryTotalPrice();
             //Assert
             Assert.AreEqual(totalPrice1, totalPrice2);
         }
     }
 }
-
-
 
 //Arrange
 //Act

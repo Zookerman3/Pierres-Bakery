@@ -1,6 +1,6 @@
 using System;
 using PierresBakery.Models;
-using System.Collections.Generic;
+
 
 
 class Program
@@ -60,6 +60,7 @@ class Program
         string amountOrdered = Console.ReadLine();
         int pastries = int.Parse(amountOrdered);
         newPastry.PastryOrder = pastries;
+        
         Console.WriteLine("You've Ordered " + newPastry.PastryOrder + " pastries");
         Console.WriteLine("The total price for your pastries is $" + newPastry.PastryTotalPrice);
         Console.WriteLine("");
@@ -79,12 +80,13 @@ class Program
         Console.WriteLine("Your total checkout price for loaves of bread is: $" + newBread.TotalPrice);
         Console.WriteLine("Your total checkout price for Pastries is: $" + newPastry.PastryTotalPrice);
     }
+      static void CheckoutBread(Bread newBread)
+    {
+       Console.WriteLine("Your total checkout price for loaves of bread is: $" + newBread.TotalPrice);
+    }
     static void CheckoutPastry(Pastry newPastry)
     {
         Console.WriteLine("Your total checkout price for Pastries is: $" + newPastry.PastryTotalPrice);
     }
-    static void CheckoutBread(Bread newBread)
-    {
-       Console.WriteLine("Your total checkout price for loaves of bread is: $" + newBread.TotalPrice);
-    }
+  
 }
