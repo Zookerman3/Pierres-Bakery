@@ -15,7 +15,9 @@ class Program
     static void CustomerChoosing()
     {
         int loaves = 0;
+        int pastries = 0;
         Bread newBread = new Bread(loaves);
+        Pastry newPastry = new Pastry(pastries);
         string userChoice = Console.ReadLine();
         if (userChoice == "Bread" || userChoice == "bread")
         {
@@ -24,16 +26,18 @@ class Program
         else if
         (userChoice == "Pastries" || userChoice == "pastries")
         {
-            ChoosePastry();
+            ChoosePastry(newPastry, newBread);
         }
     }
-    static void ChooseBread(newBread)
+    static void ChooseBread(Bread newBread)
     {
         Console.WriteLine("Please enter the amount of bread loaves you would like to order.");
         Console.WriteLine("Bread loaves are currently buy 2 get one free!");
         string amountOrdered = Console.ReadLine();
         int loaves = int.Parse(amountOrdered);
-        Bread newBread = new Bread(loaves);
+        newBread.LoavesOrder = loaves;
+        newBread.TotalLoaves += loaves;
+        newBread.GetBreadTotalPrice();
         Console.WriteLine("You've Ordered " + newBread.LoavesOrder + " loaves of bread");
         Console.WriteLine("The total price for your loaves of bread is $" + newBread.TotalPrice);
         Console.WriteLine("");
@@ -45,17 +49,17 @@ class Program
         }
         else if (CustomerOption == "Bread" || CustomerOption == "bread")
         {
-            ChooseBread();
+            ChooseBread(newBread);
         }
     }
 
-    static void ChoosePastry()
+    static void ChoosePastry(Pastry newPastry, Bread newBread)
     {
         Console.WriteLine("Please enter the amount of pastries you would like to order.");
         Console.WriteLine("Pastries are currently buy 3 get one free!");
         string amountOrdered = Console.ReadLine();
         int pastries = int.Parse(amountOrdered);
-        Pastry newPastry = new Pastry(pastries);
+        newPastry.PastryOrder = pastries;
         Console.WriteLine("You've Ordered " + newPastry.PastryOrder + " pastries");
         Console.WriteLine("The total price for your pastries is $" + newPastry.PastryTotalPrice);
         Console.WriteLine("");
@@ -67,7 +71,7 @@ class Program
         }
         else if (CustomerOption == "Bread" || CustomerOption == "bread")
         {
-            ChooseBread();
+            ChooseBread(newBread);
         }
     }
     static void Checkout(Bread newBread, Pastry newPastry)
