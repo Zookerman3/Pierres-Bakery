@@ -92,6 +92,17 @@ namespace PierresBakery.Tests
             //Assert
             Assert.AreEqual(pastries, result);
         }
+        [TestMethod] //8
+        public void SetPastries_SetsValueofPastries_Void()
+        {
+            //Arrange
+            Pastry newPastry = new Pastry(2);
+            int newPastries = 10;
+            //Act
+            newPastry.PastryOrder = newPastries;
+            //Assert
+            Assert.AreEqual(newPastries, newPastry.PastryOrder);
+        }
     }
 }
 
