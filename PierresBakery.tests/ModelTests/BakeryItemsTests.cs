@@ -108,7 +108,7 @@ namespace PierresBakery.Tests
         {
             //Arrange
             int pastries = 1;
-            int PricePerPastry = 5;
+            int PricePerPastry = 2;
             Pastry newPastry = new Pastry(pastries);
             //Act
             int totalPrice = newPastry.GetPastryTotalPrice(pastries);
