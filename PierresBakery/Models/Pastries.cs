@@ -16,7 +16,9 @@ namespace PierresBakery.Models
         public int GetPastryTotalPrice(int pastriesOrdered)
         {
             int pricePerPastry = 2;
-            PastryTotalPrice = pastriesOrdered * pricePerPastry;
+            int freePastries = pastriesOrdered / 4;
+            int paidPastries = pastriesOrdered - freePastries;
+            PastryTotalPrice = paidPastries * pricePerPastry;
             return PastryTotalPrice;
         }
     }

@@ -55,8 +55,6 @@ namespace PierresBakery.Tests
         [TestMethod] // 5
         public void GetSalePrice_ReturnstheSalePriceOfLoaves_Int()
         {
-
-
             //Arrange
             int loaves = 2;
             int loaves2 = 3;
@@ -114,6 +112,20 @@ namespace PierresBakery.Tests
             int totalPrice = newPastry.GetPastryTotalPrice(pastries);
             Assert.AreEqual(PricePerPastry, totalPrice);
             //Assert
+        }
+        [TestMethod] // 10
+        public void GetSalePrice_ReturnstheSalePriceOfLoaves_Int()
+        {
+            //Arrange
+            int pastries = 3;
+            int pastries2 = 4;
+            Pastry newPastry = new Pastry(pastries);
+            Pastry newPastry2 = new Pastry(pastries2);
+            //Act
+            int totalPrice1 = newPastry.GetPastryTotalPrice(pastries);
+            int totalPrice2 = newPastry2.GetPastryTotalPrice(pastries2);
+            //Assert
+            Assert.AreEqual(totalPrice1, totalPrice2);
         }
     }
 }
